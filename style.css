@@ -1,0 +1,1216 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap');
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: #593b50;
+    background: #ead9d5;
+}
+
+
+/* =========================
+   PAGE SYSTEM
+========================= */
+
+.page {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 80px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateX(80px) scale(0.97);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0.7s;
+
+    overflow-y: auto;
+}
+
+.page.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+}
+
+
+/* =========================
+   PAPER BACKGROUND
+========================= */
+
+.paper {
+    position: relative;
+
+    width: min(1000px, 94vw);
+    min-height: 80vh;
+
+    padding: 55px 70px;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(170, 120, 150, 0.08), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(190, 150, 170, 0.08), transparent 25%),
+        #f8eee5;
+
+    border: 1px solid rgba(125, 80, 105, 0.18);
+
+    box-shadow:
+        0 20px 60px rgba(80, 45, 65, 0.18),
+        inset 0 0 50px rgba(120, 80, 100, 0.05);
+
+    overflow: hidden;
+}
+
+.paper::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+
+    border: 1px solid rgba(128, 80, 105, 0.15);
+
+    pointer-events: none;
+}
+
+.paper::after {
+    content: "✿  ❀  ✿  ❀  ✿";
+
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 14px;
+    letter-spacing: 8px;
+
+    color: #b184a0;
+
+    opacity: 0.55;
+}
+
+
+/* =========================
+   COVER
+========================= */
+
+#page1 {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(195, 150, 175, 0.25), transparent 25%),
+        radial-gradient(circle at 85% 80%, rgba(160, 120, 165, 0.20), transparent 25%),
+        #ead9d5;
+}
+
+.cover {
+    position: relative;
+
+    width: min(900px, 90vw);
+
+    text-align: center;
+
+    padding: 65px 40px;
+
+    background:
+        radial-gradient(circle at center, rgba(255,255,255,0.45), transparent 60%),
+        #f8eee5;
+
+    border: 1px solid rgba(120, 75, 100, 0.2);
+
+    box-shadow:
+        0 25px 70px rgba(80, 45, 65, 0.18);
+
+    animation: coverAppear 1.3s ease;
+}
+
+.cover::before,
+.cover::after {
+    content: "✿";
+    position: absolute;
+
+    font-size: 70px;
+
+    color: #b784a4;
+
+    opacity: 0.35;
+}
+
+.cover::before {
+    left: 25px;
+    top: 20px;
+}
+
+.cover::after {
+    right: 25px;
+    bottom: 20px;
+}
+
+.small-heading,
+.page-label {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: #9b6686;
+
+    margin-bottom: 18px;
+}
+
+.cover h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(48px, 7vw, 82px);
+
+    line-height: 0.85;
+
+    font-weight: 600;
+
+    color: #6d435d;
+
+    letter-spacing: 3px;
+}
+
+.name {
+    margin-top: 25px;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(60px, 9vw, 100px);
+
+    color: #a45f82;
+}
+
+.nickname {
+    margin-top: -5px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+
+    color: #755067;
+}
+
+.floral-line {
+    margin: 25px 0;
+
+    color: #b17d9b;
+
+    letter-spacing: 5px;
+}
+
+.intro {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 21px;
+
+    line-height: 1.6;
+
+    color: #705166;
+}
+
+.signature {
+    margin-top: 25px;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 25px;
+
+    color: #96617f;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.open-btn,
+.next-btn,
+.gift-btn {
+    border: none;
+
+    cursor: pointer;
+
+    font-family: "DM Sans", sans-serif;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.open-btn {
+    margin-top: 30px;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    background: #a9698b;
+
+    color: white;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    box-shadow: 0 8px 20px rgba(120, 70, 100, 0.25);
+}
+
+.open-btn:hover,
+.next-btn:hover,
+.gift-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(100, 55, 85, 0.25);
+}
+
+.next-btn {
+    display: block;
+
+    margin: 25px auto 0;
+
+    padding: 11px 24px;
+
+    border-radius: 30px;
+
+    background: #a9698b;
+
+    color: white;
+
+    font-size: 13px;
+}
+
+.next-btn.light {
+    background: #f8eee5;
+    color: #71485f;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+.paper h2 {
+    text-align: center;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(42px, 6vw, 65px);
+
+    font-weight: 400;
+
+    color: #8e5878;
+
+    margin-bottom: 5px;
+}
+
+.paper h3 {
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    color: #765067;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   PHOTOS
+========================= */
+
+.photo-frame {
+    width: 250px;
+
+    padding: 10px;
+
+    background: #fffaf4;
+
+    border: 1px solid rgba(100, 65, 85, 0.15);
+
+    box-shadow:
+        0 12px 25px rgba(70, 40, 60, 0.16);
+
+    margin: 20px auto;
+
+    transform: rotate(-2deg);
+
+    transition: transform 0.4s ease;
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.04);
+}
+
+.photo-frame img,
+.large-photo img,
+.small-photo img,
+.birthday-photo img,
+.gallery-photo img,
+.polaroid img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.oval {
+    width: 230px;
+    height: 300px;
+
+    padding: 8px;
+
+    border-radius: 50%;
+}
+
+.oval img {
+    border-radius: 50%;
+}
+
+.large-photo {
+    width: min(330px, 70vw);
+    height: 390px;
+
+    padding: 10px;
+
+    background: #fffaf4;
+
+    margin: 20px auto;
+
+    box-shadow: 0 15px 30px rgba(70, 40, 60, 0.18);
+
+    transform: rotate(1deg);
+}
+
+.small-photo {
+    width: 190px;
+    height: 220px;
+
+    padding: 8px;
+
+    background: #fffaf4;
+
+    margin: 10px auto 20px;
+
+    transform: rotate(-3deg);
+
+    box-shadow: 0 12px 25px rgba(70, 40, 60, 0.15);
+}
+
+
+/* =========================
+   MESSAGES
+========================= */
+
+.message {
+    max-width: 700px;
+
+    margin: 15px auto;
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    color: #67485c;
+}
+
+.handwritten {
+    font-family: "Great Vibes", cursive !important;
+
+    font-size: 30px !important;
+
+    color: #9a6080 !important;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-layout {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 45px;
+
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.letter {
+    max-width: 470px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+
+    line-height: 1.55;
+
+    color: #64485b;
+}
+
+.letter p {
+    margin-bottom: 13px;
+}
+
+.letter .photo-frame {
+    flex-shrink: 0;
+
+    width: 230px;
+    height: 280px;
+}
+
+
+/* =========================
+   POLAROIDS
+========================= */
+
+.photo-grid {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+
+    margin: 15px auto;
+}
+
+.polaroid {
+    width: 190px;
+
+    padding: 10px 10px 30px;
+
+    background: #fffaf4;
+
+    box-shadow: 0 10px 25px rgba(70, 40, 60, 0.15);
+
+    text-align: center;
+
+    transition: transform 0.4s ease;
+}
+
+.polaroid img {
+    height: 210px;
+}
+
+.polaroid span {
+    display: block;
+
+    margin-top: 10px;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 20px;
+
+    color: #7d5369;
+}
+
+.rotate-left {
+    transform: rotate(-5deg);
+}
+
+.rotate-right {
+    transform: rotate(5deg);
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) translateY(-8px);
+}
+
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memory-grid {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.memory-grid .photo-frame {
+    width: 190px;
+}
+
+.memory-grid .photo-frame img {
+    height: 220px;
+}
+
+
+/* =========================
+   FUNNY PAGE
+========================= */
+
+.funny-letter {
+    max-width: 600px;
+
+    margin: auto;
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    line-height: 1.5;
+}
+
+.big-line {
+    font-size: 25px;
+}
+
+.wake-up {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 43px;
+
+    color: #a45f82;
+
+    margin: 8px 0;
+}
+
+
+/* =========================
+   BIRTHDAY PAGE
+========================= */
+
+.birthday-page {
+    background:
+        radial-gradient(circle at 15% 15%, rgba(255,255,255,0.2), transparent 20%),
+        radial-gradient(circle at 85% 80%, rgba(255,255,255,0.2), transparent 20%),
+        #9e6688;
+
+    color: white;
+}
+
+.birthday-content {
+    width: min(850px, 90vw);
+
+    text-align: center;
+}
+
+.date {
+    letter-spacing: 8px;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.birthday-content h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(45px, 7vw, 80px);
+
+    letter-spacing: 5px;
+}
+
+.birthday-content h2 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(50px, 8vw, 85px);
+
+    font-weight: 400;
+
+    margin-top: -5px;
+}
+
+.birthday-content p {
+    max-width: 650px;
+
+    margin: 15px auto;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 21px;
+
+    line-height: 1.5;
+}
+
+.birthday-photo {
+    width: 230px;
+    height: 270px;
+
+    margin: 20px auto;
+
+    padding: 8px;
+
+    background: #fffaf4;
+
+    transform: rotate(2deg);
+
+    box-shadow: 0 15px 30px rgba(50, 25, 45, 0.25);
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    width: min(500px, 80vw);
+
+    height: 330px;
+
+    margin: 10px auto;
+
+    position: relative;
+}
+
+.gallery-photo {
+    position: absolute;
+
+    inset: 0;
+
+    padding: 10px;
+
+    background: #fffaf4;
+
+    box-shadow: 0 15px 30px rgba(70, 40, 60, 0.18);
+
+    opacity: 0;
+
+    transform: rotate(-3deg) scale(0.95);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+.gallery-photo.active-photo {
+    opacity: 1;
+
+    transform: rotate(1deg) scale(1);
+}
+
+.gallery-photo img {
+    height: 100%;
+}
+
+.photo-count {
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+
+    color: #8c6078;
+}
+
+.gallery-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 10px;
+}
+
+.gallery-buttons button {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    border: 1px solid #bb8da5;
+
+    background: #f8eee5;
+
+    color: #80536c;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   FINAL LETTER
+========================= */
+
+.final-letter {
+    max-width: 650px;
+
+    margin: auto;
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    line-height: 1.55;
+}
+
+.final-letter p {
+    margin-bottom: 15px;
+}
+
+.signature-big {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 35px;
+
+    color: #985d7c;
+}
+
+
+/* =========================
+   GIFT PAGE
+========================= */
+
+.surprise-page {
+    text-align: center;
+
+    width: min(850px, 90vw);
+}
+
+.surprise-page h1 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(50px, 7vw, 75px);
+
+    font-weight: 400;
+
+    color: #8f5878;
+
+    margin-bottom: 25px;
+}
+
+.gift {
+    width: 170px;
+    height: 170px;
+
+    margin: 10px auto 20px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 90px;
+
+    transition: transform 0.5s ease;
+}
+
+.gift.opened {
+    transform: translateY(-10px) scale(1.1) rotate(-3deg);
+}
+
+.gift-btn {
+    padding: 15px 30px;
+
+    background: #a9698b;
+
+    color: white;
+
+    border-radius: 40px;
+
+    letter-spacing: 1px;
+}
+
+.gift-message {
+    max-width: 600px;
+
+    margin: 25px auto 0;
+
+    padding: 25px;
+
+    background: rgba(255,255,255,0.45);
+
+    border: 1px solid rgba(120,70,100,0.15);
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    pointer-events: none;
+
+    transition: 0.7s ease;
+}
+
+.gift-message.show {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+.gift-message h2 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 45px;
+
+    font-weight: 400;
+
+    color: #925b79;
+
+    margin-bottom: 15px;
+}
+
+.gift-message p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    margin: 8px;
+}
+
+
+/* =========================
+   FLOWERS
+========================= */
+
+.flowers {
+    position: absolute;
+
+    font-size: 50px;
+
+    opacity: 0.65;
+
+    animation: flowerFloat 4s ease-in-out infinite;
+}
+
+.top-left {
+    top: 25px;
+    left: 35px;
+}
+
+.top-right {
+    top: 25px;
+    right: 35px;
+
+    animation-delay: 1s;
+}
+
+
+/* =========================
+   BUTTERFLIES
+========================= */
+
+.butterfly {
+    position: fixed;
+
+    z-index: 100;
+
+    font-size: 30px;
+
+    pointer-events: none;
+
+    animation:
+        butterflyFly 12s linear infinite;
+
+    opacity: 0.8;
+}
+
+.butterfly1 {
+    left: -50px;
+    top: 18%;
+
+    animation-duration: 14s;
+}
+
+.butterfly2 {
+    left: -50px;
+    top: 65%;
+
+    animation-duration: 18s;
+
+    animation-delay: 3s;
+
+    font-size: 22px;
+}
+
+.butterfly3 {
+    left: -50px;
+    top: 40%;
+
+    animation-duration: 16s;
+
+    animation-delay: 6s;
+
+    font-size: 25px;
+}
+
+@keyframes butterflyFly {
+
+    0% {
+        transform: translateX(-50px) translateY(0) rotate(-10deg);
+    }
+
+    25% {
+        transform: translateX(25vw) translateY(-50px) rotate(8deg);
+    }
+
+    50% {
+        transform: translateX(50vw) translateY(30px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translateX(75vw) translateY(-60px) rotate(10deg);
+    }
+
+    100% {
+        transform: translateX(110vw) translateY(20px) rotate(-8deg);
+    }
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation {
+    position: fixed;
+
+    z-index: 200;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 7px 12px;
+
+    border-radius: 40px;
+
+    background: rgba(248, 238, 229, 0.85);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 5px 20px rgba(60, 35, 50, 0.12);
+}
+
+.navigation button {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #a9698b;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+#pageNumber {
+    font-size: 12px;
+
+    color: #704b61;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+    position: fixed;
+
+    z-index: 300;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(120,70,100,0.2);
+
+    background: rgba(248,238,229,0.9);
+
+    cursor: pointer;
+
+    font-size: 19px;
+
+    box-shadow: 0 5px 20px rgba(60,35,50,0.15);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes coverAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes flowerFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(3deg);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .page {
+        padding: 25px 12px 75px;
+    }
+
+    .paper {
+        width: 96vw;
+
+        min-height: 82vh;
+
+        padding: 40px 20px;
+    }
+
+    .cover {
+        width: 95vw;
+
+        padding: 50px 20px;
+    }
+
+    .cover h1 {
+        font-size: 50px;
+    }
+
+    .name {
+        font-size: 65px;
+    }
+
+    .letter-layout {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .letter {
+        font-size: 17px;
+
+        text-align: center;
+    }
+
+    .photo-grid {
+        gap: 12px;
+    }
+
+    .polaroid {
+        width: 145px;
+    }
+
+    .polaroid img {
+        height: 160px;
+    }
+
+    .memory-grid .photo-frame {
+        width: 140px;
+    }
+
+    .memory-grid .photo-frame img {
+        height: 160px;
+    }
+
+    .gallery {
+        height: 270px;
+    }
+
+    .birthday-content h1 {
+        font-size: 48px;
+    }
+
+    .birthday-content h2 {
+        font-size: 58px;
+    }
+
+    .birthday-photo {
+        width: 190px;
+        height: 220px;
+    }
+
+    .navigation {
+        bottom: 12px;
+    }
+
+    .music-button {
+        right: 12px;
+        bottom: 65px;
+    }
+}
