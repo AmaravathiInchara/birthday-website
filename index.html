@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Pragna 💗</title>
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- MUSIC -->
+    <audio id="birthdayMusic" loop>
+        <source src="music/ninadene-januma.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- FLOATING BUTTERFLIES -->
+    <div class="butterfly butterfly1">🦋</div>
+    <div class="butterfly butterfly2">🦋</div>
+    <div class="butterfly butterfly3">🦋</div>
+
+    <!-- PAGE 1 -->
+    <section class="page active" id="page1">
+
+        <div class="flowers top-left">🌸</div>
+        <div class="flowers top-right">🌷</div>
+
+        <div class="cover">
+
+            <p class="small-heading">❀ A LITTLE SOMETHING FOR YOU ❀</p>
+
+            <h1>HAPPIEST<br>BIRTHDAY</h1>
+
+            <div class="name">PRAGNA</div>
+
+            <p class="nickname">
+                My Paggu • My Baby
+            </p>
+
+            <div class="floral-line">✿ ───────── ❀ ───────── ✿</div>
+
+            <p class="intro">
+                A little surprise,<br>
+                made with lots of love... 🌸
+            </p>
+
+            <button class="open-btn" onclick="openSurprise()">
+                ✨ Open Your Surprise ✨
+            </button>
+
+            <p class="signature">— Inchu 🦋</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 2 -->
+    <section class="page" id="page2">
+
+        <div class="paper">
+
+            <p class="page-label">FOR YOU, PAGGU... 🌷</p>
+
+            <h2>A Little Birthday Wish</h2>
+
+            <div class="photo-frame oval">
+                <img src="images/photo01.jpg" alt="Pragna">
+            </div>
+
+            <p class="message">
+                Today is all about celebrating you —
+                the beautiful person you have grown into.
+            </p>
+
+            <p class="message">
+                I hope this birthday brings you
+                happiness, beautiful memories,
+                endless smiles and everything
+                your heart wishes for. 💗
+            </p>
+
+            <button class="next-btn" onclick="nextPage()">
+                Next ✿
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 3 -->
+    <section class="page" id="page3">
+
+        <div class="paper letter-paper">
+
+            <p class="page-label">A LETTER FOR YOU 💌</p>
+
+            <h2>Dear Pragna</h2>
+
+            <div class="letter-layout">
+
+                <div class="photo-frame">
+                    <img src="images/photo02.jpg" alt="Pragna and Inchu">
+                </div>
+
+                <div class="letter">
+
+                    <p>Where do I even begin?</p>
+
+                    <p>
+                        Having you as my sister is one of those
+                        beautiful things in life that I don't think
+                        I say enough about.
+                    </p>
+
+                    <p>
+                        We've grown up together, shared countless
+                        moments, and made memories that I will always
+                        carry with me.
+                    </p>
+
+                    <p>
+                        You can be my Paggu, my Sleeping Queen,
+                        and sometimes definitely my Dushman 😂...
+                    </p>
+
+                    <p>
+                        But at the end of everything, you're my Baby
+                        and my sister, and that will always be something
+                        very special to me. 🫂💗
+                    </p>
+
+                    <p>
+                        I hope you always know how much you mean to me.
+                    </p>
+
+                    <p class="handwritten">
+                        With lots of love,<br>
+                        Inchu 🦋
+                    </p>
+
+                </div>
+
+            </div>
+
+            <button class="next-btn" onclick="nextPage()">
+                Next ✿
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 4 -->
+    <section class="page" id="page4">
+
+        <div class="paper">
+
+            <p class="page-label">CHAPTER I 🌸</p>
+
+            <h2>Once Upon a Time...</h2>
+
+            <h3>There Was a Little Pragna</h3>
+
+            <div class="photo-grid">
+
+                <div class="polaroid rotate-left">
+                    <img src="images/photo07.jpg">
+                    <span>Those tiny days... 🥹</span>
+                </div>
+
+                <div class="polaroid rotate-right">
+                    <img src="images/photo17.jpg">
+                    <span>Our little baby! 💗</span>
+                </div>
+
+                <div class="polaroid rotate-left">
+                    <img src="images/photo20.jpg">
+                    <span>Look how little you were!</span>
+                </div>
+
+            </div>
+
+            <p class="message">
+                Some photographs get old...
+                but the memories never do. 🌷
+            </p>
+
+            <button class="next-btn" onclick="nextPage()">
+                Next ✿
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 5 -->
+    <section class="page" id="page5">
+
+        <div class="paper">
+
+            <p class="page-label">CHAPTER II ✨</p>
+
+            <h2>Look At You Now...</h2>
+
+            <div class="large-photo">
+                <img src="images/photo11.jpg" alt="Beautiful Pragna">
+            </div>
+
+            <p class="message">
+                From that little girl in those old photographs...
+                to the beautiful person you are today.
+            </p>
+
+            <p class="message">
+                You've grown, changed, learned, laughed,
+                and become someone truly wonderful.
+            </p>
+
+            <p class="handwritten">
+                And honestly...<br>
+                I couldn't be prouder of the person you've become. 💗
+            </p>
+
+            <button class="next-btn" onclick="nextPage()">
+                Next ✿
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 6 -->
+    <section class="page" id="page6">
+
+        <div class="paper">
+
+            <p class="page-label">SOME MEMORIES 🤍</p>
+
+            <h2>Always My Person</h2>
+
+            <div class="memory-grid">
+
+                <div class="photo-frame">
+                    <img src="images/photo04.jpg">
+                </div>
+
+                <div class="photo-frame">
+                    <img src="images/photo06.jpg">
+                </div>
+
+                <div class="photo-frame">
+                    <img src="images/photo19.jpg">
+                </div>
+
+            </div>
+
+            <p class="message">
+                Through every phase, every celebration,
+                every little moment...
+            </p>
+
+            <p class="message">
+                I'm grateful that I get to call you my sister.
+                Some people come into our lives and become memories.
+                You came into mine and became a forever part of it. 🫂💗
+            </p>
+
+            <button class="next-btn" onclick="nextPage()">
+                Next ✿
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 7 -->
+    <section class="page" id="page7">
+
+        <div class="paper">
+
+            <p class="page-label">FOR MY SLEEPING QUEEN 👑</p>
+
+            <h2>A Few Words For You</h2>
+
+            <div class="small-photo">
+                <img src="images/photo15.jpg">
+            </div>
+
+            <div class="funny-letter">
+
+                <p class="big-line">
+                    First of all...
+                </p>
+
+                <p class="wake-up">
+                    PLEASE WAKE UP. 😂
+                </p>
+
+                <p>
+                    Because apparently being a Sleeping Queen
+                    is a full-time job.
+                </p>
+
+                <p>
+                    But jokes apart...
+                </p>
+
+                <p>
+                    I hope you always stay the beautiful,
+                    kind and wonderful person you are.
+                </p>
+
+                <p>
+                    Never stop dreaming.<br>
+                    Never stop smiling.<br>
+                    Never stop being yourself.
+                </p>
+
+                <p>
+                    And whenever you need someone...
+                </p>
+
+                <p class="handwritten">
+                    Inchu will always be there. 💗
+                </p>
+
+            </div>
+
+            <button class="next-btn" onclick="nextPage()">
+                Next ✿
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 8 -->
+    <section class="page birthday-page" id="page8">
+
+        <div class="birthday-content">
+
+            <p class="date">08 • 10 • 2008</p>
+
+            <h1>HAPPY BIRTHDAY</h1>
+
+            <h2>PRAGNA! 🎂</h2>
+
+            <div class="birthday-photo">
+                <img src="images/photo14.jpg">
+            </div>
+
+            <p>
+                May this year bring you beautiful opportunities,
+                unforgettable memories and countless reasons to smile.
+            </p>
+
+            <p class="handwritten">
+                Here's to another beautiful year of you. 🌸
+            </p>
+
+            <button class="next-btn light" onclick="nextPage()">
+                Next ✿
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 9 -->
+    <section class="page" id="page9">
+
+        <div class="paper">
+
+            <p class="page-label">A LITTLE MORE OF YOU... 💗</p>
+
+            <h2>Our Little Scrapbook</h2>
+
+            <div class="gallery">
+
+                <div class="gallery-photo active-photo">
+                    <img src="images/photo03.jpg">
+                </div>
+
+                <div class="gallery-photo">
+                    <img src="images/photo05.jpg">
+                </div>
+
+                <div class="gallery-photo">
+                    <img src="images/photo08.jpg">
+                </div>
+
+                <div class="gallery-photo">
+                    <img src="images/photo09.jpg">
+                </div>
+
+                <div class="gallery-photo">
+                    <img src="images/photo10.jpg">
+                </div>
+
+                <div class="gallery-photo">
+                    <img src="images/photo12.jpg">
+                </div>
+
+                <div class="gallery-photo">
+                    <img src="images/photo13.jpg">
+                </div>
+
+                <div class="gallery-photo">
+                    <img src="images/photo16.jpg">
+                </div>
+
+                <div class="gallery-photo">
+                    <img src="images/photo18.jpg">
+                </div>
+
+            </div>
+
+            <p class="photo-count" id="photoCount">
+                Photo 01 / 09
+            </p>
+
+            <div class="gallery-buttons">
+                <button onclick="previousPhoto()">←</button>
+                <button onclick="nextPhoto()">→</button>
+            </div>
+
+            <button class="next-btn" onclick="nextPage()">
+                Next ✿
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 10 -->
+    <section class="page" id="page10">
+
+        <div class="paper letter-paper">
+
+            <p class="page-label">ONE LAST THING, BABY... 💗</p>
+
+            <h2>From Your Akka</h2>
+
+            <div class="final-letter">
+
+                <p>
+                    Even though I scold you a lot,
+                    your Akka loves you a lot, kane... 🥹💗
+                </p>
+
+                <p>
+                    I know I may irritate you, scold you,
+                    and sometimes fight with you over the
+                    smallest things 😂, but behind all of that
+                    is so much love.
+                </p>
+
+                <p>
+                    You will always be my little Baby,
+                    no matter how old you grow.
+                </p>
+
+                <p>
+                    I may not say it every day, but I am always
+                    going to be there for you — to annoy you,
+                    protect you, support you and, of course,
+                    scold you when needed. 😂🫂
+                </p>
+
+                <p>
+                    Happy Birthday, Paggu. 🌸
+                </p>
+
+                <p>
+                    Always keep smiling and stay the same
+                    beautiful person you are.
+                </p>
+
+                <p class="handwritten">
+                    Your Akka loves you a lot, kane... ❤️
+                </p>
+
+                <p class="signature-big">
+                    — Inchu 🦋
+                </p>
+
+            </div>
+
+            <button class="next-btn" onclick="nextPage()">
+                Next ✿
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 11 -->
+    <section class="page" id="page11">
+
+        <div class="surprise-page">
+
+            <p class="page-label">WAIT, PAGGU... 👀</p>
+
+            <h1>There's One More Thing...</h1>
+
+            <div class="gift" id="gift">
+
+                <div class="gift-lid">
+                    🎀
+                </div>
+
+                <div class="gift-box">
+                    🎁
+                </div>
+
+            </div>
+
+            <button class="gift-btn" onclick="openGift()">
+                🎀 OPEN YOUR GIFT
+            </button>
+
+            <div id="giftMessage" class="gift-message">
+
+                <h2>Happy Birthday, My Baby 💗</h2>
+
+                <p>
+                    My Paggu. My Sleeping Queen.
+                    My Dushman. My Baby. My Sister.
+                </p>
+
+                <p>
+                    No matter how old you get,
+                    you'll always have a special place
+                    in my heart.
+                </p>
+
+                <p class="handwritten">
+                    I love you, Pragna. 💗
+                </p>
+
+                <p>
+                    Happy Birthday! 🎂🌸
+                </p>
+
+                <p class="signature">
+                    Made with love by Inchu 🦋
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+    <div class="navigation">
+
+        <button onclick="previousPage()" id="backButton">
+            ←
+        </button>
+
+        <span id="pageNumber">1 / 11</span>
+
+        <button onclick="nextPage()" id="forwardButton">
+            →
+        </button>
+
+    </div>
+
+
+    <!-- MUSIC BUTTON -->
+    <button class="music-button" onclick="toggleMusic()" id="musicButton">
+        🎵
+    </button>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
